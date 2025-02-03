@@ -6,3 +6,10 @@
 - Smart Meter IoT integration for real time tracking
 - Interactive admin dashboard for monitoring and managing data.
 - Notification system for real-time alerts.
+
+
+## Contributors:
+- Arellano, Ma. Darlene
+- Enoc, Rezelee
+- Laguardia, Luis Gabriel;
+- Llaguno, Marielle
