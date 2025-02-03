@@ -11,5 +11,5 @@
 ## Contributors:
 - Arellano, Ma. Darlene
 - Enoc, Rezelee
-- Laguardia, Luis Gabriel;
+- Laguardia, Luis Gabriel
 - Llaguno, Marielle
