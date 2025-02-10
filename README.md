@@ -139,11 +139,11 @@ Authorization: Bearer <JWT Token>
 ```
 
 ## License
-This project, **EcoTrack**, is developed as a **capstone project** for the **College of Computing and Information Technologies (CCIT) at National University Manila**. The system is designed for use by **Batangas I Electric Cooperative, Inc. (BATELEC I)** to enhance energy efficiency monitoring and provide AI-powered insights to consumers.
+This project, **EcoTrack**, is being developed as a **capstone project** for the **College of Computing and Information Technologies (CCIT) at National University Manila**. The system is designed for use by **Batangas I Electric Cooperative, Inc. (BATELEC I)** to enhance energy efficiency monitoring and provide AI-powered insights to consumers.
 
 **Ownership & Usage:**
-- The system is intended for research and development purposes under the CCIT department.
-- BATELEC I holds rights to system utilization and implementation but is subject to further legal agreements.
+- The system is being developed for research and development purposes under the CCIT department.
+- BATELEC I will hold rights to system utilization and implementation, subject to further legal agreements.
 - Unauthorized distribution, reproduction, or commercial use without approval from the project team and relevant authorities is prohibited.
 
 ### 2025 EcoTrack Development Team
