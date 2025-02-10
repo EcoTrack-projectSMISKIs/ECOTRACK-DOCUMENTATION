@@ -5,7 +5,7 @@ The EcoTrack API provides endpoints for real-time electricity consumption monito
 
 ## Base URL
 ```
-https://api.ecotrack. ????
+https://api.ecotrack. ???? asis
 ```
 
 ## Authentication
@@ -138,80 +138,12 @@ Authorization: Bearer <JWT Token>
 }
 ```
 
-## Admin Features
-### **Post News & Updates**
-**Endpoint:**
-```
-POST /admin/news
-```
-**Headers:**
-```
-Authorization: Bearer <JWT Token>
-```
-**Request Body:**
-```json
-{
-  "title": "Power Interruption Notice",
-  "message": "Scheduled maintenance on Feb 15 from 1PM-5PM.",
-  "date": "2025-02-10"
-}
-```
-**Response Body:**
-```json
-{
-  "message": "News posted successfully"
-}
-```
+## License
+This project, **EcoTrack**, is developed as a **capstone project** for the **College of Computing and Information Technologies (CCIT) at National University Manila**. The system is designed for use by **Batangas I Electric Cooperative, Inc. (BATELEC I)** to enhance energy efficiency monitoring and provide AI-powered insights to consumers.
 
-### **User Management (Admin Only)**
-**Endpoint:**
-```
-GET /admin/users
-```
-**Headers:**
-```
-Authorization: Bearer <JWT Token>
-```
-**Response Body:**
-```json
-{
-  "users": [
-    { "user_id": "12345", "name": "John Doe", "email": "john.doe@example.com", "verified": true }
-  ]
-}
-```
+**Ownership & Usage:**
+- The system is intended for research and development purposes under the CCIT department.
+- BATELEC I holds rights to system utilization and implementation but is subject to further legal agreements.
+- Unauthorized distribution, reproduction, or commercial use without approval from the project team and relevant authorities is prohibited.
 
-## Summary
-| **Feature** | **Method** | **Endpoint** | **Description** |
-|------------|------------|----------------|----------------|
-| User Authentication | `POST` | `/auth/login` | Logs in user & returns JWT token |
-| IoT Data Retrieval | `GET` | `/iot/energy-usage` | Fetches real-time energy usage |
-| AI Recommendations | `GET` | `/ai/recommendations` | Provides energy-saving tips |
-| Notifications | `GET` | `/notifications` | Fetches power outage & news updates |
-| Admin User Management | `GET` | `/admin/users` | View registered users (Admin Only) |
-
-## viva awit salvatore
-
-**MIT License:**
-```text
-Copyright (c) 2025 EcoTrack Development Team
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
+### 2025 EcoTrack Development Team
