@@ -5,7 +5,7 @@ The EcoTrack API provides endpoints for real-time electricity consumption monito
 
 ## Base URL
 ```
-https://api.ecotrack. ???? asis
+https://api.ecotrack. ???? TBA 
 ```
 
 ## Authentication
