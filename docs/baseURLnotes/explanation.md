@@ -1,7 +1,9 @@
 # Understanding the Base URL in EcoTrack API
 
 **Version:** 1.0
+
 **Last Updated:** February 11, 2025
+
 **Base URL:** `https://api.ecotrack.com/v1`
 
 ---
