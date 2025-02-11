@@ -88,4 +88,7 @@ When deploying your backend, the **Base URL** will change based on the hosting p
 - The API should be **deployed on Vercel, AWS, or DigitalOcean** for live usage.
 
 
-by gpt4
+
+
+note to devs, theres a sample code on how to connect it... 
+-luis
