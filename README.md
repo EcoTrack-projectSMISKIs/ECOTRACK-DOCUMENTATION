@@ -168,4 +168,3 @@ This project, **EcoTrack**, is being developed as a **capstone project** for the
 - Unauthorized distribution, reproduction, or commercial use without approval from the project team and relevant authorities is prohibited.
 ---
 ### 2025 EcoTrack Development Team
----
