@@ -166,5 +166,6 @@ This project, **EcoTrack**, is being developed as a **capstone project** for the
 - The system is being developed for research and development purposes under the CCIT department.
 - BATELEC I will hold rights to system utilization and implementation, subject to further legal agreements.
 - Unauthorized distribution, reproduction, or commercial use without approval from the project team and relevant authorities is prohibited.
-
+---
 ### 2025 EcoTrack Development Team
+---
