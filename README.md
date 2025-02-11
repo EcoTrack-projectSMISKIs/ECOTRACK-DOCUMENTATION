@@ -1,22 +1,25 @@
 # EcoTrack API Documentation
 
+**Version:** 1.0  
+**Last Updated:** February 11, 2025  
+**Base URL:** `https://api.ecotrack.com/v1`  
+**Authentication:** Bearer Token (JWT)  
+
+---
+
 ## Overview
 The EcoTrack API provides endpoints for real-time electricity consumption monitoring, AI-driven energy-saving recommendations, and user notifications. This API serves as the backend for both the mobile (Flutter) and web (React) applications, enabling seamless data retrieval from IoT smart meters and interaction with users.
 
-## Base URL
-```
-https://api.ecotrack. ???? TBA 
-```
+---
 
-## Authentication
-The API uses JWT (JSON Web Token) authentication. Users must be logged in to access most endpoints.
+## **Authentication**
+EcoTrack uses **JWT (JSON Web Token)** authentication. Users must **log in** to access most endpoints.
 
 ### **User Registration**
-**Endpoint:**
-```
-POST /auth/register
-```
-**Request Body:**
+- **Endpoint:** `POST /auth/register`
+- **Authentication Required:** No  
+
+#### ✅ Request Body (JSON)
 ```json
 {
   "name": "John Doe",
@@ -25,46 +28,40 @@ POST /auth/register
   "electricBillReceipt": "base64encodedimage"
 }
 ```
-**Response Body:**
+#### Response (JSON)
 ```json
 {
   "message": "User registered successfully",
   "userId": "12345"
 }
 ```
-
 ### **User Login**
-**Endpoint:**
-```
-POST /auth/login
-```
-**Request Body:**
+- **Endpoint:** `POST /auth/login`
+- **Authentication Required:** No
+#### Request Body (JSON)
 ```json
 {
   "email": "john.doe@example.com",
   "password": "securepassword"
 }
 ```
-**Response Body:**
+#### Response (JSON)
 ```json
 {
   "token": "your_jwt_token",
   "message": "Login successful"
 }
 ```
-
-## IoT Smart Meter Data Retrieval
-
+ **Use the token for authorization in all requests:**
+```
+Authorization: Bearer <jwt_token>
+```
+---
+## **IoT Smart Meter Data Retrieval**
 ### **Real-Time Energy Consumption**
-**Endpoint:**
-```
-GET /iot/energy-usage
-```
-**Headers:**
-```
-Authorization: Bearer <JWT Token>
-```
-**Response Body:**
+- **Endpoint:** `GET /iot/energy-usage`
+- **Authentication Required:** Yes
+#### Response (JSON)
 ```json
 {
   "user_id": "12345",
@@ -76,18 +73,14 @@ Authorization: Bearer <JWT Token>
   ]
 }
 ```
-
 ### **Energy Consumption History**
-**Endpoint:**
-```
-GET /iot/energy-history?period=monthly
-```
-**Query Parameters:**
-- `period=hourly` → Returns hourly data for today
-- `period=daily` → Returns last 7 days
-- `period=monthly` → Returns last 3 months
-
-**Response Body:**
+- **Endpoint:** `GET /iot/energy-history?period=monthly`
+- **Authentication Required:** Yes
+- **Query Parameters:**
+ - `period=hourly` Returns hourly data for today
+ - `period=daily` Returns last 7 days
+ - `period=monthly` Returns last 3 months
+#### Response (JSON)
 ```json
 {
   "user_id": "12345",
@@ -97,17 +90,11 @@ GET /iot/energy-history?period=monthly
   ]
 }
 ```
-
-## AI-Powered Energy Recommendations
-**Endpoint:**
-```
-GET /ai/recommendations
-```
-**Headers:**
-```
-Authorization: Bearer <JWT Token>
-```
-**Response Body:**
+---
+## **AI-Powered Energy Recommendations**
+- **Endpoint:** `GET /ai/recommendations`
+- **Authentication Required:** Yes
+#### Response (JSON)
 ```json
 {
   "user_id": "12345",
@@ -118,17 +105,11 @@ Authorization: Bearer <JWT Token>
   ]
 }
 ```
-
-## Notifications (Power Outages & Updates)
-**Endpoint:**
-```
-GET /notifications
-```
-**Headers:**
-```
-Authorization: Bearer <JWT Token>
-```
-**Response Body:**
+---
+## **Notifications (Power Outages & Updates)**
+- **Endpoint:** `GET /notifications`
+- **Authentication Required:** Yes
+#### Response (JSON)
 ```json
 {
   "notifications": [
@@ -137,6 +118,46 @@ Authorization: Bearer <JWT Token>
   ]
 }
 ```
+---
+## **Webhooks (Real-Time Events)**
+If you need **real-time alerts**, subscribe to **webhooks**.
+### **Webhook Event: Power Alert** ASIS (tobediscussed)
+- **Endpoint:** `POST /webhook/power-alert`
+- **Authentication Required:** Yes
+#### Example Event (JSON)
+```json
+{
+  "event": "power_threshold_exceeded",
+  "device_id": "1000abcdef",
+  "power": 1000,
+  "timestamp": "2025-02-11T10:00:00Z"
+}
+
+```
+---
+## **Real-Time WebSocket API**
+- **WebSocket URL:** `wss://api.ecotrack.com/socket`
+- **Authentication Required:**
+#### Incoming Data (JSON)
+```json
+{
+  "device_id": "1000abcdef",
+  "voltage": 120,
+  "current": 0.6,
+  "power": 72,
+  "timestamp": "2025-02-11T10:00:00Z"
+}
+```
+---
+## **Error Handling**
+| **HTTP Code** | **Meaning** | **Description** |
+|--------------|------------|----------------|
+| `200 OK` | Success | Request was successful |
+| `400 Bad Request` | Invalid Input | Request was malformed |
+| `401 Unauthorized` | Auth Error | Token is missing or invalid |
+| `403 Forbidden` | Access Denied | You do not have permission |
+| `500 Internal Server Error` | Server Issue | Unexpected error |
+---
 
 ## License
 This project, **EcoTrack**, is being developed as a **capstone project** for the **College of Computing and Information Technologies (CCIT) at National University Manila**. The system is designed for use by **Batangas I Electric Cooperative, Inc. (BATELEC I)** to enhance energy efficiency monitoring and provide AI-powered insights to consumers.
