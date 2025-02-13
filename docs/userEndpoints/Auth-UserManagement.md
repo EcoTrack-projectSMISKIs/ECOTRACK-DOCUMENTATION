@@ -7,7 +7,7 @@
 - Users must upload a BATELEC I electric bill receipt for verification.
 - Verification is manual (Admin must approve accounts).
 
-### Request Body (JSON)
+### Request (JSON)
 ```json
 {
   "name": "John Doe",
@@ -28,7 +28,7 @@
 **Endpoint:** `POST /auth/login`  
 **Description:** Authenticates users and generates a JWT token.  
 
-### Request Body (JSON)
+### Request (JSON)
 ```json
 {
   "email": "john.doe@example.com",
