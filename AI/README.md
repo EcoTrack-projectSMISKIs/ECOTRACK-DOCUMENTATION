@@ -8,10 +8,12 @@
 --
 
 sh
+
 npm install openai dotenv
 --
 For Python (if processing AI requests separately):
---
+
 sh
+
 pip install openai
 --
