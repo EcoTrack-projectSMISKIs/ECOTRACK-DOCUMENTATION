@@ -1,0 +1,16 @@
+Future<void> fetchAIRecommendation() async {
+  final response = await http.post(
+    Uri.parse("https://api.ecotrack.com/recommendations"),
+    headers: {"Content-Type": "application/json"},
+    body: jsonEncode({
+      "device": "Air Conditioner",
+      "daily_usage": 8,
+      "avg_power": 1200,
+      "peak_hours": "1PM-4PM"
+    }),
+  );
+
+  if (response.statusCode == 200) {
+    print("AI Recommendation: ${jsonDecode(response.body)['recommendation']}");
+  }
+}
