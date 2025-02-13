@@ -34,3 +34,16 @@ Bearer Token (JWT)
   }
 }
 ```
+
+### Fetch Admin Profile
+**Endpoint:** `GET /admin/profile`  
+**Description:** Retrieves authenticated admin details.  
+
+#### Response (JSON)
+```json
+{
+  "id": "admin123",
+  "name": "Admin User",
+  "email": "admin@example.com",
+  "role": "superadmin"
+}
