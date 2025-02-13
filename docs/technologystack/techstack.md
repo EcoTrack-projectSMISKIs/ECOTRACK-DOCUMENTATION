@@ -49,7 +49,7 @@ Each section includes the **frontend, backend, database, authentication, AI proc
 
 ---
 
-## 📡 IoT & Smart Meter Integration
+## IoT & Smart Meter Integration
 
 - **Hardware:** ESP32, Zigbee Smart Meters
 - **Protocol:** MQTT, WebSockets
