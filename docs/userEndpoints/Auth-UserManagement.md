@@ -6,19 +6,20 @@
 **Notes:**
 - Users must upload a BATELEC I electric bill receipt for verification.
 - Verification is manual (Admin must approve accounts).
-- Store user details in MongoDB with JWT-based authentication.
 
-## User Login
-**Endpoint:** `POST /auth/login`  
-**Description:** Authenticates users and generates a JWT token.  
-**Notes:**
-- Requires email and password.
-- Returns a JWT token used for API authorization.
-- Invalid credentials return an error response.
-
-## Fetch User Profile
-**Endpoint:** `GET /users/profile`  
-**Description:** Retrieves authenticated user details.  
-**Notes:**
-- Requires JWT authentication.
-- Returns user name, email, verified status, and registered devices.
+### Request Body (JSON)
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "securepassword",
+  "electric_bill_receipt": "base64_encoded_image"
+}
+```
+### Request Body (JSON)
+```json
+{
+  "message": "User registered successfully. Awaiting verification.",
+  "userId": "12345"
+}
+```
