@@ -36,3 +36,21 @@
 }
 
 ```
+
+### Edit a News Post
+**Endpoint:** `PUT /admin/news/{news_id}`  
+**Description:** Allows admins to edit an existing news post.  
+
+#### Request (JSON)
+```json
+{
+  "title": "Updated Energy-Saving Initiative",
+  "content": "The energy-saving program will be available from March 1st."
+}
+```
+#### Response (JSON)
+```json
+{
+  "message": "News updated successfully."
+}
+```
