@@ -6,6 +6,7 @@
 **2️⃣ Install OpenAI SDK**
 - For Node.js Backend:
 --
+
 sh
 npm install openai dotenv
 --
@@ -13,3 +14,4 @@ For Python (if processing AI requests separately):
 --
 sh
 pip install openai
+--
