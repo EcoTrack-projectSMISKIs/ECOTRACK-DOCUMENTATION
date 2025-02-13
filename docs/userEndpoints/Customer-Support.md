@@ -3,7 +3,21 @@
 ## Submit Support Request
 **Endpoint:** `POST /support/request`  
 **Description:** Allows users to submit power-related issues (e.g., power outage reports).  
-**Notes:**
-- Requires user ID and issue details.
-- Support requests are logged in MongoDB.
-- Admins can respond via the Admin Dashboard.
+
+### Request (JSON)
+```json
+{
+  "user_id": "12345",
+  "issue_type": "Power Outage",
+  "description": "There is no power in my area since 9 AM."
+}
+```
+
+### Response (JSON)
+```json
+{
+  "message": "Support request submitted successfully.",
+  "ticket_id": "SUP-98765",
+  "status": "pending"
+}
+```
