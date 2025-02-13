@@ -54,3 +54,13 @@
   "message": "News updated successfully."
 }
 ```
+
+### Delete a News Post
+**Endpoint:** `DELETE /admin/news/{news_id}`  
+**Description:** Allows admins to remove news posts.  
+
+#### Response (JSON)
+```json
+{
+  "message": "News post deleted successfully."
+}
