@@ -23,7 +23,7 @@
   "userId": "12345"
 }
 ```
---
+
 ## User Login
 **Endpoint:** `POST /auth/login`  
 **Description:** Authenticates users and generates a JWT token.  
@@ -49,3 +49,22 @@
   }
 }
 ```
+## Fetch User Profile
+**Endpoint:** `GET /users/profile`  
+**Description:** Retrieves authenticated user details.  
+
+### Response (JSON)
+```json
+{
+  "id": "12345",
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "verified": true,
+  "registered_devices": [
+    {
+      "device_id": "1000abcdef",
+      "name": "Living Room Plug",
+      "status": "online"
+    }
+  ]
+}
