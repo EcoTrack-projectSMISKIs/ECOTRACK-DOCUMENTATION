@@ -16,3 +16,22 @@
     "submitted_at": "2025-02-14T08:30:00Z"
   }
 ]
+```
+
+### Respond to a Support Request
+**Endpoint:** `POST /admin/support/{ticket_id}/respond`  
+**Description:** Allows admins to reply to a user’s support request.  
+
+#### Request (JSON)
+```json
+{
+  "response": "We are aware of the power outage and our technicians are working on it."
+}
+```
+
+#### Response (JSON)
+```json
+{
+  "message": "Support request response sent successfully."
+}
+```
