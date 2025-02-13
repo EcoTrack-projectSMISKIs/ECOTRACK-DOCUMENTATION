@@ -16,10 +16,35 @@
   "electric_bill_receipt": "base64_encoded_image"
 }
 ```
-### Request Body (JSON)
+### Response (JSON)
 ```json
 {
   "message": "User registered successfully. Awaiting verification.",
   "userId": "12345"
+}
+```
+## User Login
+**Endpoint:** `POST /auth/login`  
+**Description:** Authenticates users and generates a JWT token.  
+
+### Request Body (JSON)
+```json
+{
+  "email": "john.doe@example.com",
+  "password": "securepassword"
+}
+```
+
+### Response (JSON)
+```json
+{
+  "token": "your_jwt_token",
+  "message": "Login successful",
+  "user": {
+    "id": "12345",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "verified": true
+  }
 }
 ```
