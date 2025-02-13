@@ -29,7 +29,7 @@
   "posted_by": "Admin User"
 }
 ```
-#### Request (JSON)
+#### Response (JSON)
 ```json
 {
   "message": "News posted successfully."
