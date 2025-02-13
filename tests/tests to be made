@@ -1,1 +1,119 @@
+// server.js
+// EcoTrack API Development - Node.js (Express.js)
+
+// Import dependencies
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
+import mqtt from 'mqtt';
+import authRoutes from './routes/auth.js';
+import userRoutes from './routes/users.js';
+import adminRoutes from './routes/admin.js';
+import deviceRoutes from './routes/devices.js';
+import aiRoutes from './routes/ai.js';
+import supportRoutes from './routes/support.js';
+import ewelink from 'ewelink-api';
+import { Configuration, OpenAIApi } from 'openai';
+
+// Load environment variables
+dotenv.config();
+
+// Initialize Express app
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/devices', deviceRoutes);
+app.use('/api/ai', aiRoutes);
+app.use('/api/support', supportRoutes);
+
+// Database Connection
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Initialize eWeLink API
+const connection = new ewelink({
+    email: process.env.EWELINK_EMAIL,
+    password: process.env.EWELINK_PASSWORD,
+    region: process.env.EWELINK_REGION
+});
+
+// Initialize OpenAI API
+const openaiConfig = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY
+});
+const openai = new OpenAIApi(openaiConfig);
+
+// MQTT Client for real-time updates
+const mqttClient = mqtt.connect(process.env.MQTT_BROKER);
+
+mqttClient.on('connect', () => {
+    console.log('Connected to MQTT broker');
+});
+
+mqttClient.on('message', (topic, message) => {
+    console.log(`Received message from ${topic}: ${message.toString()}`);
+    // Process real-time energy data
+});
+
+// Fetch device power consumption
+app.get('/api/devices/:deviceId/power', async (req, res) => {
+    try {
+        const { deviceId } = req.params;
+        const devicePower = await connection.getDevicePowerState(deviceId);
+        res.json(devicePower);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch device power data' });
+    }
+});
+
+// Generate AI-based energy recommendations
+app.post('/api/ai/recommendations', async (req, res) => {
+    try {
+        const { device, daily_usage, avg_power, peak_hours } = req.body;
+        const prompt = `My ${device} runs ${daily_usage} hours daily, consuming ${avg_power}W. Peak usage: ${peak_hours}. How can I optimize its energy use?`;
+
+        const response = await openai.createChatCompletion({
+            model: 'gpt-4-turbo',
+            messages: [
+                { role: 'system', content: 'You are an energy efficiency assistant.' },
+                { role: 'user', content: prompt }
+            ]
+        });
+
+        res.json({ recommendation: response.data.choices[0].message.content });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to generate recommendation' });
+    }
+});
+
+// Authentication Middleware
+const authenticateToken = (req, res, next) => {
+    const token = req.header('Authorization');
+    if (!token) return res.status(401).json({ error: 'Access denied' });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ error: 'Invalid token' });
+        req.user = user;
+        next();
+    });
+};
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`EcoTrack API running on port ${PORT}`);
+});
 
