@@ -18,6 +18,7 @@
 ]
 ```
 
+
 ### Respond to a Support Request
 **Endpoint:** `POST /admin/support/{ticket_id}/respond`  
 **Description:** Allows admins to reply to a user’s support request.  
@@ -35,3 +36,14 @@
   "message": "Support request response sent successfully."
 }
 ```
+
+
+### Close a Support Ticket
+**Endpoint:** `POST /admin/support/{ticket_id}/close`  
+**Description:** Marks a support request as resolved.  
+
+#### Response (JSON)
+```json
+{
+  "message": "Support request closed successfully."
+}
