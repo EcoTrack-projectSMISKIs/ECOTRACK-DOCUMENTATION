@@ -1,6 +1,6 @@
-# 3️⃣ AI-Based Energy Recommendations
+# AI-Based Energy Recommendations
 
-## 🔹 Request Energy-Saving Recommendation
+## Request Energy-Saving Recommendation
 **Endpoint:** `POST /ai/recommendations`  
 **Description:** Allows the user to request an AI-generated energy-saving suggestion.  
 
