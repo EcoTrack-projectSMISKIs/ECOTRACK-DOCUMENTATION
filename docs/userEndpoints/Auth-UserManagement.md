@@ -23,6 +23,7 @@
   "userId": "12345"
 }
 ```
+--
 ## User Login
 **Endpoint:** `POST /auth/login`  
 **Description:** Authenticates users and generates a JWT token.  
