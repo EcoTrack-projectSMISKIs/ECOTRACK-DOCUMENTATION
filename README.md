@@ -6,7 +6,9 @@
 ---
 
 ## Overview
+
 The EcoTrack API provides endpoints for real-time electricity consumption monitoring, AI-driven energy-saving recommendations, and user notifications. This API serves as the backend for both the mobile (Flutter) and web (React) applications, enabling seamless data retrieval from IoT smart meters and interaction with users.
+
 ---
 ## **Error Handling**
 | **HTTP Code** | **Meaning** | **Description** |
