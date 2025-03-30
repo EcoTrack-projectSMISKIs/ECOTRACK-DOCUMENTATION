@@ -84,4 +84,4 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
- **Developed by the EcoTrack Team (2025)**
+ **EcoTrack Backend Team**
