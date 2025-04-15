@@ -1,8 +1,8 @@
 # EcoTrack API Documentation
 
 **Version:** 1.0  
-**Last Updated:** February 11, 2025  
-**Base URL:** `https://api.ecotrack.com/v1`  
+**Last Updated:** February 11, 2025  // apr15
+**Base URL:** `https://api.ecotrack.online/v1`  
 ---
 
 ## Overview
