@@ -2,7 +2,7 @@
 
 **Version:** 1.0  
 **Last Updated:** February 11, 2025  // apr15
-**Base URL:** `https://api.ecotrack.online/v1`  
+**Base URL:** `https://ecotrack.online/api`  
 ---
 
 ## Overview
