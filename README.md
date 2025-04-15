@@ -154,4 +154,4 @@ Delete a news entry by ID.
 ---
 
 ##  Built by
-** EcoTrack Dev Team**
+** EcoTrack Dev Team **
