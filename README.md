@@ -148,7 +148,8 @@ Delete a news entry by ID.
 
 ##  Related Repositories
 
-- [Frontend (Admin Panel)](https://github.com/EcoTrack-projectSMISKIs/EcoTrack-Admin-webside)
+- [Frontend (admin-panel)](https://github.com/EcoTrack-projectSMISKIs/EcoTrack-Admin-webside/tree/main/admin-panel)
+- [Frontend (admin-panel)](https://github.com/EcoTrack-projectSMISKIs/EcoTrack-Admin-webside/tree/main/backend)
 
 ---
 
