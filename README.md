@@ -1,31 +1,156 @@
-# EcoTrack API Documentation
+#  EcoTrack Admin Webside – API Documentation
 
-**Version:** 1.0  
-**Last Updated:** February 11, 2025  // apr15
-**Base URL:** `https://ecotrack.online/api`  
----
-
-## Overview
-
-The EcoTrack API provides endpoints for real-time electricity consumption monitoring, AI-driven energy-saving recommendations, and user notifications. This API serves as the backend for both the mobile (Flutter) and web (React) applications, enabling seamless data retrieval from IoT smart meters and interaction with users.
+**Version:** 1.1  
+**Base URL:** `http://localhost:5003/api`  
+**Auth:** JWT Bearer Token required for protected routes.
 
 ---
-## **Error Handling**
-| **HTTP Code** | **Meaning** | **Description** |
-|--------------|------------|----------------|
-| `200 OK` | Success | Request was successful |
-| `400 Bad Request` | Invalid Input | Request was malformed |
-| `401 Unauthorized` | Auth Error | Token is missing or invalid |
-| `403 Forbidden` | Access Denied | You do not have permission |
-| `500 Internal Server Error` | Server Issue | Unexpected error |
+
+##  Admin Routes
+
+### `POST /api/admin/login`
+Authenticate an admin and return a JWT.
+
+#### Request Body
+```json
+{
+  "email": "admin@ecotrack.com",
+  "password": "ask_luis_for_password"
+}
+```
+
+#### Response
+```json
+{
+  "token": "JWT_TOKEN"
+}
+```
+
 ---
 
-## License
-This project, **EcoTrack**, is being developed as a **capstone project** for the **College of Computing and Information Technologies (CCIT) at National University Manila**. The system is designed for use by **Batangas I Electric Cooperative, Inc. (BATELEC I)** to enhance energy efficiency monitoring and provide AI-powered insights to consumers.
+##  User Routes
 
-**Ownership & Usage:**
-- The system is being developed for research and development purposes under the CCIT department.
-- BATELEC I will hold rights to system utilization and implementation, subject to further legal agreements.
-- Unauthorized distribution, reproduction, or commercial use without approval from the project team and relevant authorities is prohibited.
+>  All user routes below require a `Bearer` token in the `Authorization` header.
+
+### `POST /api/users/register`
+Register a new user.
+
+#### Request Body
+```json
+{
+  "name": "Luis",
+  "username": "luisadmin",
+  "phone": "09123456789",
+  "email": "luis@example.com",
+  "password": "securepassword"
+}
+```
+
 ---
-### 2025 EcoTrack Development Team
+
+### `POST /api/users/login`
+Login an existing user.
+
+#### Request Body
+```json
+{
+  "email": "luis@example.com",
+  "password": "securepassword"
+}
+```
+
+#### Response
+```json
+{
+  "_id": "userId",
+  "name": "Luis",
+  "email": "luis@example.com",
+  "token": "JWT_TOKEN"
+}
+```
+
+---
+
+### `GET /api/users`
+Get a list of all users.  
+**Headers:**  
+`Authorization: Bearer <token>`
+
+---
+
+### `PUT /api/users/:id`
+Update a user.
+
+#### Request Body
+```json
+{
+  "name": "Updated Name",
+  "email": "new@email.com"
+}
+```
+
+---
+
+### `DELETE /api/users/:id`
+Delete a user by ID.
+
+---
+
+##  News Routes
+
+>  All news routes require `Authorization: Bearer <token>`.
+
+### `GET /api/news`
+Get all news entries.
+
+---
+
+### `POST /api/news`
+Create a new news entry.
+
+#### Request Body
+```json
+{
+  "title": "Power Interruption Notice",
+  "content": "There will be a maintenance...",
+  "image": "https://example.com/image.jpg"
+}
+```
+
+---
+
+### `PUT /api/news/:id`
+Update a news entry.
+
+#### Request Body
+```json
+{
+  "title": "Updated title",
+  "content": "Updated content",
+  "image": "https://example.com/updated.jpg"
+}
+```
+
+---
+
+### `DELETE /api/news/:id`
+Delete a news entry by ID.
+
+---
+
+##  Notes
+
+- Ensure the backend is running at `http://localhost:5003`.
+- Include `Authorization: Bearer <JWT_TOKEN>` in protected routes.
+- All input fields are validated via Mongoose.
+
+---
+
+##  Related Repositories
+
+- [Frontend (Admin Panel)](https://github.com/EcoTrack-projectSMISKIs/EcoTrack-Admin-webside)
+
+---
+
+##  Built by
+** EcoTrack Dev Team**
