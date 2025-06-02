@@ -12,7 +12,7 @@ It consists of:
 ---
 
 ## System Architecture  
-![EcoTrack Architecture](./REVISION%20VERSION%209%20(IGITNA%20SI%20IOT%20AT%20BACKEND)%20-%20FINAL%20NA%20LEGIT.jpeg)  
+![EcoTrack Architecture](./architecture.png)
 > This architecture shows how **mobile, web, backend, and IoT** components interact through MQTT and REST APIs.
 
 ---
