@@ -26,7 +26,7 @@ Handles all user-side actions from the Flutter app.
 - View plug list
 - Fetch individual plug data
 
-[See Mobile API Documentation »](./Mobile-API-Documentation)
+[See Mobile API Documentation »](./docs/Mobile-API-Documentation)
 
 ---
 
@@ -58,7 +58,7 @@ Controls smart plugs, power state, energy logs, and auto-AI tips.
 - Delete / rename / update plug
 - Monthly energy usage stats
 
-[See Plug API Documentation »](./Plug-API-Documentation)
+[See Plug API Documentation »](./docs/Plug-API-Documentation)
 
 ---
 
@@ -74,7 +74,7 @@ Describes the architecture, platforms, and flow diagram used by EcoTrack.
 - OpenAI GPT-4o for AI tips
 - Hosted on Render + Vercel
 
-[See Technology Stack Documentation »](./Technology%20Stack)
+[See Technology Stack Documentation »](./docs/Technology%20Stack)
 
 ---
 
