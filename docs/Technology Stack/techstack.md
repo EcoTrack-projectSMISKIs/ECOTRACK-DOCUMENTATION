@@ -45,7 +45,7 @@ It consists of:
 -  **Real-Time Energy Monitoring**  
 -  **AI-Driven Energy-Saving Tips**  
 -  **News & Maintenance Updates from BATELEC I**  
-- ⚙ **Profile and Account Settings**
+-  **Profile and Account Settings**
 
 ---
 
