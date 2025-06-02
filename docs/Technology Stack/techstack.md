@@ -6,7 +6,7 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** Tech Stack Summary **
+## Tech Stack Summary
 | **Component**       | **Technology Stack**                                 |
 |--------------------|-------------------------------------------------------|
 | **Mobile App**     | Flutter (Dart), Riverpod, Firebase Auth               |
@@ -18,34 +18,34 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** Mobile Application (User Side) **
+## Mobile Application (User Side)
 - **Frontend:** Flutter (Dart)  
 - **Backend API:** Node.js (Express.js), MongoDB  
 - **IoT Integration:** MQTT Broker, Athom Plug v2,Tasmota Firmware  
 
-### **Key Features for Users**
+### Key Features for Users
  **Real-Time Energy Monitoring** – Tracks per-appliance electricity usage  
  **AI-Driven Energy Recommendations** – Users manually request energy-saving insights  
  **News & Alerts** – Users receive updates & maintenance notices from BATELEC I  
 
 ---
 
-## ** Web Application (Admin) **
+## Web Application (Admin) 
 - **Frontend:** React.js, Material UI
 - **Backend API:** Node.js (Express.js), MongoDB  
 
-### **Key Features for Admins**
+### Key Features for Admins
  **User Management** – Verify & manage user registrations  
  **News & Updates Management** – CRUD operations for posting updates  
 
 ---
 
-## ** IoT & Smart Meter Integration**
+## IoT & Smart Meter Integration
 - **Hardware:** Smart Plugs  
 - **Protocol:** MQTT, TLS, SSL, Tasmota Firmware  
 - **Data Storage:** **MongoDB** (Normal Collection)  
 
-### **How It Works**
+### How It Works
  ** Athom Plug v2 ** send **real-time energy consumption data** via **MQTT Broker**.  
  The **backend stores power data** in **MongoDB.**  
  Users can **monitor energy usage** via the **Flutter mobile app**.  
@@ -53,12 +53,12 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** AI Integration (Energy-Saving Insights)**
+## AI Integration (Energy-Saving Insights)
 - **AI Model:** OpenAI GPT-4 API  
 - **Processing:** Node.js Backend formats energy usage into prompts and sends them to OpenAI  
 - **Response Time:** Instant AI-generated **energy efficiency recommendations**  
 
-### **How It Works**
+### How It Works
  **User requests an energy-saving tip in the mobile app**  
  **Backend fetches historical power data from MongoDB**  
  **Sends structured request to OpenAI API**  
@@ -66,7 +66,7 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** DevOps, Security & Deployment**
+## DevOps, Security & Deployment
 | **Category**  | **Technology** |
 |--------------|-----------------|
 | **Security** | JWT, HTTPS      |
