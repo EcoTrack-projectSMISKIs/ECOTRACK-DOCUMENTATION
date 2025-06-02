@@ -110,6 +110,6 @@ It consists of:
 
 ---
 
-## 👨‍💻 Contributors  
+## Contributors  
 **EcoTrack Backend & Fullstack Team**  
-Committed to helping Filipino households monitor and save energy 💡🇵🇭
+Committed to helping Filipino households monitor and save energy
