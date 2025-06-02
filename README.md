@@ -12,4 +12,4 @@
 ---
 
 ##  Built by
-**EcoTrack Backend Team **
+**EcoTrack Backend Team**
