@@ -136,21 +136,6 @@ Authorization: Bearer <JWT_TOKEN>
 
 ---
 
-## Email Campaign (Admin Only)
-
-### POST /api/admin/send-campaign
-**Description:** Send announcements to all admins  
-**Access:** admin  
-**Body:**  
-```json
-{
-  "subject": "Important Update",
-  "message": "Please attend tomorrow’s meeting..."
-}
-```
-
----
-
 ## Notes
 - Routes are protected via JWT and role-based access (`admin`, `superadmin`)
 - Some endpoints are limited to `superadmin` only (e.g., creating/deleting admins)
