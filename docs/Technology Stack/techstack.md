@@ -13,43 +13,41 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 | **Admin Dashboard** | React.js, Redux, Material UI                         |
 | **Backend**        | Node.js (Express.js), MongoDB, JWT                    |
 | **AI Processing**  | OpenAI GPT-4 API (For AI Recommendations)             |
-| **IoT Integration**| Sonoff S31 Smart Plugs, eWeLink API, MQTT, WebSockets |
-| **DevOps & Deployment** | AWS, Vercel, HTTPS, GitHub Actions, ELK Stack    |
+| **IoT Integration**| Athom Smart Plug v2 (tasmota), MQTT (RabbitMQ)        |
+| **DevOps & Deployment** | Render, Vercel, GitHub,                          |
 
 ---
 
 ## ** Mobile Application (User Side)**
-- **Frontend:** Flutter (Dart), Riverpod, Firebase Auth  
+- **Frontend:** Flutter (Dart)  
 - **Backend API:** Node.js (Express.js), MongoDB  
-- **IoT Integration:** MQTT Broker, eWeLink API  
+- **IoT Integration:** MQTT Broker, Athom Plug v2,Tasmota Firmware  
 
 ### **Key Features for Users**
  **Real-Time Energy Monitoring** – Tracks per-appliance electricity usage  
  **AI-Driven Energy Recommendations** – Users manually request energy-saving insights  
  **News & Alerts** – Users receive updates & maintenance notices from BATELEC I  
- **Support & Issue Reporting** – Users can report power outages and request assistance  
 
 ---
 
 ## ** Web Application (Admin)**
-- **Frontend:** React.js, Redux, Material UI  
+- **Frontend:** React.js, Material UI
 - **Backend API:** Node.js (Express.js), MongoDB  
 
 ### **Key Features for Admins**
  **User Management** – Verify & manage user registrations  
  **News & Updates Management** – CRUD operations for posting updates  
- **Customer Support Requests** – View & respond to user inquiries  
 
 ---
 
 ## ** IoT & Smart Meter Integration**
-- **Hardware:** Sonoff S31 Smart Plugs  
-- **Protocol:** MQTT, WebSockets, eWeLink API  
-- **Data Storage:** **MongoDB** (Time-Series Collection)  
+- **Hardware:** Smart Plugs  
+- **Protocol:** MQTT, TLS, SSL, Tasmota Firmware  
+- **Data Storage:** **MongoDB** (Normal Collection)  
 
 ### **How It Works**
- **Sonoff S31 smart plugs** send **real-time energy consumption data** via **eWeLink API**.  
- The **backend stores power data** in **MongoDB** as **time-series records**.  
+ ** Athom Plug v2 ** send **real-time energy consumption data** via **MQTT Broker**.  
+ The **backend stores power data** in **MongoDB.**  
  Users can **monitor energy usage** via the **Flutter mobile app**.  
  Users can **request AI-powered energy recommendations** manually.  
 
@@ -70,16 +68,15 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ## ** DevOps, Security & Deployment**
 | **Category**  | **Technology** |
-|--------------|----------------|
-| **Security** | JWT, HTTPS, OAuth 2.0 |
-| **Hosting & Deployment** | AWS, Vercel, DigitalOcean |
-| **Monitoring** | ELK Stack |
+|--------------|-----------------|
+| **Security** | JWT, HTTPS      |
+| **Hosting & Deployment** | Render, Vercel |
 | **CI/CD** | GitHub Actions for automated builds & testing |
 
 ### **Deployment Workflow**
  **Frontend (Mobile & Web)** hosted on **Vercel** (React.js)  
- **Backend (Node.js & MongoDB)** deployed on **AWS**  
- **IoT Data stored in MongoDB** (optimized for time-series queries)  
+ **Backend (Node.js & MongoDB)** deployed on **Render**  
+ **IoT Data stored in MongoDB** (optimized for normal queries)  
  **CI/CD Pipelines via GitHub Actions** for seamless updates  
 
 ---
