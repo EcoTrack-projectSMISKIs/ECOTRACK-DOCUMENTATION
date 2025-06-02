@@ -1,84 +1,115 @@
-# EcoTrack - Technology Stack Documentation
+# EcoTrack – Technology Stack Documentation
 
-## Overview
-EcoTrack is a **real-time energy monitoring system** that integrates **IoT smart meters, OpenAI AI recommendations, and a mobile app (Flutter)**.  
-The system captures power consumption data, provides **AI-driven energy-saving insights**, and enables **users to track and optimize their electricity usage**.
+## Overview  
+**EcoTrack** is a **real-time energy monitoring platform** designed to help users optimize electricity consumption using **smart IoT plugs**, a **Flutter-based mobile app**, and **AI-powered energy recommendations** via OpenAI.
+
+It consists of:
+- A mobile app for **real-time monitoring and insights**
+- A web dashboard for **admin management and news publishing**
+- A backend server for **data processing and AI communication**
+- An MQTT-based IoT system for **smart plug integration**
+
+---
+
+## System Architecture  
+![EcoTrack Architecture](./REVISION%20VERSION%209%20(IGITNA%20SI%20IOT%20AT%20BACKEND)%20-%20FINAL%20NA%20LEGIT.jpeg)  
+> This architecture shows how **mobile, web, backend, and IoT** components interact through MQTT and REST APIs.
 
 ---
 
 ## Tech Stack Summary
-| **Component**       | **Technology Stack**                                 |
-|--------------------|-------------------------------------------------------|
-| **Mobile App**     | Flutter (Dart), Riverpod, Firebase Auth               |
-| **Admin Dashboard** | React.js, Redux, Material UI                         |
-| **Backend**        | Node.js (Express.js), MongoDB, JWT                    |
-| **AI Processing**  | OpenAI GPT-4 API (For AI Recommendations)             |
-| **IoT Integration**| Athom Smart Plug v2 (tasmota), MQTT (RabbitMQ)        |
-| **DevOps & Deployment** | Render, Vercel, GitHub,                          |
+
+| **Component**         | **Technology Used**                                     |
+|-----------------------|----------------------------------------------------------|
+| **Mobile App**        | Flutter (Dart), Riverpod                                 |
+| **Admin Dashboard**   | React.js, Redux, Material UI                             |
+| **Backend**           | Node.js (Express.js), MongoDB, JWT                       |
+| **AI Recommendations**| OpenAI GPT-4 API                                         |
+| **IoT Integration**   | Athom Smart Plug v2 (Tasmota), MQTT (RabbitMQ)           |
+| **Deployment**        | Render (Backend), Vercel (Frontend), GitHub Actions      |
 
 ---
 
 ## Mobile Application (User Side)
-- **Frontend:** Flutter (Dart)  
-- **Backend API:** Node.js (Express.js), MongoDB  
-- **IoT Integration:** MQTT Broker, Athom Plug v2,Tasmota Firmware  
 
-### Key Features for Users
- **Real-Time Energy Monitoring** – Tracks per-appliance electricity usage  
- **AI-Driven Energy Recommendations** – Users manually request energy-saving insights  
- **News & Alerts** – Users receive updates & maintenance notices from BATELEC I  
+- **Framework:** Flutter (Dart)  
+- **State Management:** Riverpod  
+- **Authentication:** Custom JWT  
+- **APIs:** RESTful APIs from Express.js  
+- **IoT Control:** MQTT over TLS (secured)  
 
----
-
-## Web Application (Admin) 
-- **Frontend:** React.js, Material UI
-- **Backend API:** Node.js (Express.js), MongoDB  
-
-### Key Features for Admins
- **User Management** – Verify & manage user registrations  
- **News & Updates Management** – CRUD operations for posting updates  
+### Features for Customers
+-  **User Authentication** (Sign-Up / Login)  
+-  **Add & Configure Smart Plugs**  
+-  **Appliance List & Control**  
+-  **Real-Time Energy Monitoring**  
+-  **AI-Driven Energy-Saving Tips**  
+-  **News & Maintenance Updates from BATELEC I**  
+- ⚙ **Profile and Account Settings**
 
 ---
 
-## IoT & Smart Meter Integration
-- **Hardware:** Smart Plugs  
-- **Protocol:** MQTT, TLS, SSL, Tasmota Firmware  
-- **Data Storage:** **MongoDB** (Normal Collection)  
+## Web Application (Admin Side)
 
-### How It Works
- ** Athom Plug v2 ** send **real-time energy consumption data** via **MQTT Broker**.  
- The **backend stores power data** in **MongoDB.**  
- Users can **monitor energy usage** via the **Flutter mobile app**.  
- Users can **request AI-powered energy recommendations** manually.  
+- **Frontend:** React.js with Material UI  
+- **State Management:** Redux  
+- **Hosted on:** Vercel  
+- **APIs:** Same backend as mobile app  
 
----
-
-## AI Integration (Energy-Saving Insights)
-- **AI Model:** OpenAI GPT-4 API  
-- **Processing:** Node.js Backend formats energy usage into prompts and sends them to OpenAI  
-- **Response Time:** Instant AI-generated **energy efficiency recommendations**  
-
-### How It Works
- **User requests an energy-saving tip in the mobile app**  
- **Backend fetches historical power data from MongoDB**  
- **Sends structured request to OpenAI API**  
- **AI returns personalized recommendations for reducing electricity consumption**  
+### Features for Admins
+-  **User Management** (verify, archive, monitor users)  
+-  **Admin Management** (super admin only)  
+-  **News & Update Announcements**  
+-  **Account Settings**
 
 ---
 
-## DevOps, Security & Deployment
-| **Category**  | **Technology** |
-|--------------|-----------------|
-| **Security** | JWT, HTTPS      |
-| **Hosting & Deployment** | Render, Vercel |
-| **CI/CD** | GitHub Actions for automated builds & testing |
+## IoT & Smart Plug Integration
 
-### **Deployment Workflow**
- **Frontend (Mobile & Web)** hosted on **Vercel** (React.js)  
- **Backend (Node.js & MongoDB)** deployed on **Render**  
- **IoT Data stored in MongoDB** (optimized for normal queries)  
- **CI/CD Pipelines via GitHub Actions** for seamless updates  
+- **Device:** Athom Smart Plug v2 (Tasmota Firmware)  
+- **Communication Protocol:** MQTT via RabbitMQ  
+- **Data Flow:**  
+  1. Smart plug measures energy usage  
+  2. Publishes data to MQTT Broker  
+  3. Backend subscribes and stores data in MongoDB  
+  4. Mobile app fetches live usage data via REST API  
+
+### Security  
+- MQTT secured with TLS/SSL  
+- User access controlled via JWT
 
 ---
 
- **EcoTrack Backend Team**
+## AI-Powered Energy Insights
+
+- **Model:** OpenAI GPT-4 via API  
+- **How it works:**
+  1. User taps "Get Energy Tip" on the app  
+  2. Backend pulls recent plug data from MongoDB  
+  3. Formats a structured prompt and sends it to OpenAI  
+  4. Receives and returns a customized energy-saving recommendation
+
+- **Use Case:** Suggest off-peak usage, unplug habits, or high-usage alerts
+
+---
+
+## Deployment & DevOps
+
+| **Category**    | **Tech**                                      |
+|------------------|-----------------------------------------------|
+| **Security**     | JWT Auth, HTTPS, Role-Based Permissions       |
+| **Hosting**      | Vercel (Web Frontend), Render (Backend APIs)  |
+| **CI/CD**        | GitHub Actions (Auto deploy on push)          |
+| **Database**     | MongoDB (hosted)                              |
+
+### Deployment Flow (notes to my devs)
+- Push to `main` → GitHub Actions triggers deployment (both FE & BE)
+- Frontend built & deployed to Vercel  
+- Backend deployed to Render  
+- MQTT Broker constantly running to sync plug data  
+
+---
+
+## 👨‍💻 Contributors  
+**EcoTrack Backend & Fullstack Team**  
+Committed to helping Filipino households monitor and save energy 💡🇵🇭
