@@ -24,7 +24,7 @@ It consists of:
 | **Mobile App**        | Flutter (Dart), Riverpod                                 |
 | **Admin Dashboard**   | React.js, Redux, Material UI                             |
 | **Backend**           | Node.js (Express.js), MongoDB, JWT                       |
-| **AI Recommendations**| OpenAI GPT-4 API                                         |
+| **AI Recommendations**| OpenAI GPT-4 omni API                                    |
 | **IoT Integration**   | Athom Smart Plug v2 (Tasmota), MQTT (RabbitMQ)           |
 | **Deployment**        | Render (Backend), Vercel (Frontend), GitHub Actions      |
 
