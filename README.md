@@ -41,7 +41,7 @@ Used by BATELEC admins and superadmins on the web dashboard.
 - User management
 - News CRUD and archiving
 
-[See Web API Documentation »](./Web-API-Documentation)
+[See Web API Documentation »](./docs/Web-API-Documentation)
 
 ---
 
