@@ -6,7 +6,7 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** Tech Stack Summary**
+## ** Tech Stack Summary **
 | **Component**       | **Technology Stack**                                 |
 |--------------------|-------------------------------------------------------|
 | **Mobile App**     | Flutter (Dart), Riverpod, Firebase Auth               |
@@ -18,7 +18,7 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** Mobile Application (User Side)**
+## ** Mobile Application (User Side) **
 - **Frontend:** Flutter (Dart)  
 - **Backend API:** Node.js (Express.js), MongoDB  
 - **IoT Integration:** MQTT Broker, Athom Plug v2,Tasmota Firmware  
@@ -30,7 +30,7 @@ The system captures power consumption data, provides **AI-driven energy-saving i
 
 ---
 
-## ** Web Application (Admin)**
+## ** Web Application (Admin) **
 - **Frontend:** React.js, Material UI
 - **Backend API:** Node.js (Express.js), MongoDB  
 
