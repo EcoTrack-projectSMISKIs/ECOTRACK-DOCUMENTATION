@@ -2,16 +2,6 @@
 
 Welcome to the **EcoTrack API Documentation** — a full-stack energy monitoring platform using IoT, AI, and mobile/web interfaces.
 
-## Project Overview
-
-EcoTrack enables:
-- **Real-time energy tracking** via smart plugs (Tasmota + MQTT)
-- **AI-generated power-saving recommendations** (OpenAI GPT-4o)
-- **Flutter mobile app** for consumers
-- **React-based admin dashboard** for BATELEC staff
-
-All APIs are organized and modularized per function:
-
 ---
 
 ## Mobile API
