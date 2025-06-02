@@ -40,7 +40,6 @@ Used by BATELEC admins and superadmins on the web dashboard.
 - Admin management (create, archive, update)
 - User management
 - News CRUD and archiving
-- Send campaign email
 
 [See Web API Documentation »](./Web-API-Documentation)
 
