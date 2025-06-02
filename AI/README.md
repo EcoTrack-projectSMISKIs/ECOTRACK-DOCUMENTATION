@@ -18,9 +18,7 @@ This module generates short, personalized energy-saving tips for users based on 
 
 ## How It Works
 
-1. User taps "Get Tip" in the EcoTrack mobile app.
+1. Once the user opens the device dashboard, it will automatically give recommendations.
 2. Backend fetches the latest `Yesterday` usage data.
 3. It builds a natural language prompt based on appliance name and usage.
 4. Sends to OpenAI and returns a friendly recommendation.
-
-## Example API Endpoint
